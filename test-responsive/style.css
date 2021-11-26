@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    position: relative;
+}
+
+header {
+    height: 54px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+header .nav-pc {
+    color: white;
+}
+
+header .nav-pc a {
+    line-height: 54px;
+    padding: 0 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+header .nav-pc a:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.slider {
+    height: 1000px;
+    background-color: #797;
+}
+
+/* Mobile */
+.nav-bars-btn {
+    width: 28px;
+    height: 28px;
+    color: white;
+    display: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: identifier linear 0.2s;
+}
+
+.nav-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 20em;
+    max-width: 100%;
+    background-color: #000;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all linear 0.2s;
+}
+
+.nav-mobile .mobile-list {
+    margin-top: 48px;
+}
+
+.nav-mobile a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 10px;
+    text-transform: uppercase;
+}
+
+.nav-mobile a:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.nav-mobile-close {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+}
+
+.nav-mobile-close:hover {
+    cursor: pointer;
+}
+
+.nav-input {
+    display: none;
+}
+
+.nav-input:checked ~ .overlay {
+    display: block;
+}
+
+.nav-input:checked ~ .nav-mobile {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+@media (max-width: 1203px) {
+    .nav-bars-btn {
+        display: block;
+    }
+
+    .nav-pc {
+        display: none;
+    }
+}
+
+@keyframes identifier {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
