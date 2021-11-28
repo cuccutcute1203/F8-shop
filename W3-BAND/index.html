@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="themify-icons/themify-icons.css">
 </head>
 <body>
@@ -31,6 +32,10 @@
 
            <div class="search-btn">
                <i class="search-icon ti-search"></i>
+           </div>
+
+           <div id="mobile-menu" class="mobile-menu-btn">
+               <i class="menu-icon ti-menu"></i>
            </div>
         </header>
 
@@ -164,5 +169,15 @@
             <p class="copyright">Powered by <a href="#">w3.com</a></p>
         </footer>
     </div>
+
+    <script>
+        var header = document.getElementsByTagName('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenu.onclick = function() {
+           console.log(header.clientHeight);
+            
+        }
+    </script>
 </body>
 </html>
