@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="main">
-        <header>
+        <header id="header">
            <ul class="nav">
                <li><a href="#">Home</a></li>
                <li><a href="#band">Band</a></li>
@@ -171,12 +171,16 @@
     </div>
 
     <script>
-        var header = document.getElementsByTagName('header');
+        var header = document.getElementById("header");
         var mobileMenu = document.getElementById('mobile-menu');
         
         mobileMenu.onclick = function() {
-           console.log(header.clientHeight);
-            
+           var isClose = header.clientHeight === 46;
+           if(isClose) {
+               header.style.height = 'auto';
+           }else {
+               header.style.height = '46px';
+            } 
         }
     </script>
 </body>
